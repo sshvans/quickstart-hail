@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Example Product Name on the AWS Cloud</title>
+<title>Hail 0.2 on the AWS Cloud</title>
 <style>
 
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -768,10 +768,10 @@ table p {
 <body class="book toc2 toc-left">
 <div id="header">
 <div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
+<div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a></li>
-<li><a href="#_example_product_name_on_aws"><em>Example Product Name</em> on AWS</a></li>
+<li><a href="#_hail_0_2_on_aws"><em>Hail 0.2</em> on AWS</a></li>
 <li><a href="#_cost">Cost</a></li>
 <li><a href="#_software_licenses">Software Licenses</a></li>
 <li><a href="#_architecture">Architecture</a></li>
@@ -784,8 +784,6 @@ table p {
 </li>
 <li><a href="#_deployment_steps">Deployment Steps</a>
 <ul class="sectlevel2">
-<li><a href="#_sign_in_to_your_aws_account">Sign in to your AWS account</a></li>
-<li><a href="#_launch_the_quick_start">Launch the Quick Start</a></li>
 <li><a href="#_launch_into_a_new_vpc">Launch into a new VPC</a></li>
 <li><a href="#_launch_into_an_existing_vpc">Launch into an existing VPC</a></li>
 </ul>
@@ -803,15 +801,15 @@ table p {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<h2 id="_example_product_name_on_the_aws_cloud" class="discrete text-center"><em>Example Product Name</em> on the AWS Cloud</h2>
+<h2 id="_hail_0_2_on_the_aws_cloud" class="discrete text-center"><em>Hail 0.2</em> on the AWS Cloud</h2>
 <h2 id="_quick_start_reference_deployment" class="discrete text-left text-center">Quick Start Reference Deployment</h2>
 <h3 id="_draft_document_unofficial_guidance" class="discrete text-center">DRAFT DOCUMENT / UNOFFICIAL GUIDANCE</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph text-center">
-<p><strong>May, 2020</strong><br>
-<em>John Doe and Jane Doe - Example Company Name, Ltd.</em><br>
-<em>Jim Smith - AWS Global Partner SA, AWS + Joe Jones - Technical Product Manager, AWS</em></p>
+<p><strong>July, 2020</strong><br>
+<em>Adam Perry, Privo IT + Adam Tebbe, Goldfinch Pharmaceuticals</em><br>
+<em>Paul Underwood, AWS + Roy Hasson, AWS</em></p>
 </div>
 </div>
 </div>
@@ -825,14 +823,14 @@ table p {
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Visit our <a href="https://github.com/aws-quickstart/quickstart-documentation-base">GitHub repository</a> for source files and to post feedback,
+Visit our <a href="https://github.com/aws-quickstart/quickstart-hail" target="_blank" rel="noopener">GitHub repository</a> for source files and to post feedback,
 report bugs, or submit feature ideas for this Quick Start.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph text-left">
-<p>This Quick Start was created by <em>Example Company Name, Ltd.</em> in collaboration with Amazon Web Services (AWS). <a href="http://aws.amazon.com/quickstart/">Quick Starts</a> are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS, following AWS best practices.</p>
+<p>This Quick Start was created by <em>PrivoIT</em> in collaboration with Amazon Web Services (AWS). <a href="http://aws.amazon.com/quickstart/" target="_blank" rel="noopener">Quick Starts</a> are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS, following AWS best practices.</p>
 </div>
 </div>
 </div>
@@ -841,15 +839,15 @@ report bugs, or submit feature ideas for this Quick Start.
 <div class="sectionbody">
 <div class="paragraph">
 <p>This Quick Start reference deployment guide provides step-by-step
-instructions for deploying <em>Example Product Name</em> on the AWS Cloud.</p>
+instructions for deploying <em>Hail 0.2</em> on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/target_and_usage</code></strong></em></p>
+<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/overview_target_and_usage</code></strong></em></p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>This Quick Start is for users who &lt;target audience and usage scenario&gt;</p>
+<p>This Quick Start is for users who are looking to use an open-source library for scalable data exploration and analysis, with particular emphasis on genomics.</p>
 </div>
 </div>
 </div>
@@ -870,7 +868,7 @@ collaborated with AWS on the content of the Quick Start.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example_product_name_on_aws"><em>Example Product Name</em> on AWS</h2>
+<h2 id="_hail_0_2_on_aws"><em>Hail 0.2</em> on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/product_description.adoc</code></strong></em></p>
@@ -878,7 +876,8 @@ collaborated with AWS on the content of the Quick Start.
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>&lt;Describe how the software works on AWS.&gt;</p>
+<p>Hail is maintained by a team in the <a href="https://www.nealelab.is">Neale</a> lab at the <a href="https://www.broadinstitute.org/stanley">Stanley Center for Psychiatric Research</a> of the <a href="https://www.broadinstitute.org/">Broad Institute of MIT and Harvard</a> and the <a href="https://www.atgu.mgh.harvard.edu/">Analytic and Translational Genetics Unit</a>https://www.massgeneral.org[of Massachusetts General Hospital].
+This QuickStart packages up Hail into your AWS environment and makes it easy to spin up clusters and integrated notebooks for analysis.</p>
 </div>
 </div>
 </div>
@@ -896,8 +895,7 @@ using the Quick Start.</p>
 <p>The AWS CloudFormation template for this Quick Start includes
 configuration parameters that you can customize. Some of the settings,
 such as the instance type, affect the cost of deployment. For cost estimates,
-see the pricing pages for each AWS service you will use. Prices are subject to change.
-To get an estimate, you can use the</p>
+see the pricing pages for each AWS service you will use. Prices are subject to change.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -906,7 +904,7 @@ To get an estimate, you can use the</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-After you deploy the Quick Start, we recommend that you enable the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports-gettingstarted-turnonreports.html">AWS Cost and Usage Report</a>. This report delivers billing metrics to an Amazon Simple Storage Service (Amazon S3) bucket in your account. It provides cost estimates based on usage throughout each month and finalizes the data at the end of the month. For more information about the report, see the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports-costusage.html">AWS documentation</a>.
+After you deploy the Quick Start, we recommend that you enable the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports-gettingstarted-turnonreports.html" target="_blank" rel="noopener">AWS Cost and Usage Report</a>. This report delivers billing metrics to an Amazon Simple Storage Service (Amazon S3) bucket in your account. It provides cost estimates based on usage throughout each month and finalizes the data at the end of the month. For more information about the report, see the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports-costusage.html" target="_blank" rel="noopener">AWS documentation</a>.
 </td>
 </tr>
 </table>
@@ -922,19 +920,7 @@ After you deploy the Quick Start, we recommend that you enable the <a href="http
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>These two paragraphs provide an example of the details you can provide. Provide links as appropriate.</p>
-</div>
-<div class="paragraph">
-<p>Example content below:</p>
-</div>
-<div class="paragraph">
-<p><em>&lt;license information&gt;This Quick Start requires a license for Example Product Name. To use the Quick Start in your production environment, sign up for a license at &lt;link&gt;. When you launch the Quick Start, place the license key in an S3 bucket and specify its location.</em></p>
-</div>
-<div class="paragraph">
-<p><em>If you don’t have a license, the Quick Start deploys with a trial license. The trial license gives you &lt;n&gt; days of free usage in a non-production environment. After this time, you can upgrade to a production license by following the instructions at &lt;link&gt;.</em></p>
-</div>
-<div class="paragraph">
-<p><em>&lt;AMI information&gt;The Quick Start requires a subscription to the Amazon Machine Image (AMI) for Example Product Name, which is available from <a href="https://aws.amazon.com/marketplace/">AWS Marketplace</a>. Additional pricing, terms, and conditions may apply. For instructions, see <a href="#step-2.-subscribe-to-the-software-ami">step 2</a> in the deployment section.</em></p>
+<p>Hail 0.2 is released under the <a href="https://github.com/hail-is/hail/blob/master/LICENSE">MIT License</a>.</p>
 </div>
 </div>
 </div>
@@ -950,14 +936,22 @@ After you deploy the Quick Start, we recommend that you enable the <a href="http
 <div class="content">
 <div class="paragraph">
 <p>Deploying this Quick Start for a new virtual private cloud (VPC) with
-<strong>default parameters</strong> builds the following <em>Example Product Name</em> environment in the
+<strong>default parameters</strong> builds the following <em>Hail 0.2</em> environment in the
 AWS Cloud.</p>
 </div>
 <div id="architecture1" class="imageblock">
 <div class="content">
-<a class="image" href="https://docs.aws.amazon.com/quickstart/latest/linux-bastion/images/linux-bastion-hosts-on-aws-architecture.png"><img src="images/architecture_diagram.png" alt="Architecture" width="648" height="439"></a>
+<img src="images/architecture.png" alt="Architecture" width="648" height="439">
 </div>
-<div class="title">Figure 1. Quick Start architecture for <em>Example Product Name</em> on AWS</div>
+<div class="title">Figure 1. Quick Start architecture for <em>Hail 0.2</em> on AWS</div>
+</div>
+<div class="paragraph">
+<p>Once the Hail Service Catalog portfolio is deployed, you can begin spinning up Notebook Instances and Hail Clusters that can talk to each other via SparkMagic/Livy.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/overview.png" alt="Overview" width="648" height="439">
+</div>
 </div>
 <div class="paragraph">
 <p>As shown in Figure 1, the Quick Start sets up the following:</p>
@@ -965,37 +959,27 @@ AWS Cloud.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A highly available architecture that spans two Availability Zones.*</p>
+<p>4 AWS CodeBuild pipelines to support building various combinations of Hail 0.2.x releases, VEP versions, and LOFTEE.</p>
 </li>
 <li>
-<p>A VPC configured with public and private subnets, according to AWS
-best practices, to provide you with your own virtual network on AWS.*</p>
+<p>A Hail 0.2 AWS Service Catalog portfolio.</p>
+</li>
+<li>
+<p>A “Hail EMR Cluster” Service Catalog product which lets you stand up and tear down Hail 0.2 clusters on AWS EMR as needed.</p>
+</li>
+<li>
+<p>A “Hail SageMaker Notebook Instance” Service Catalog product that lets you stand up and tear down JupyterLab notebook environments that integrate with Hail clusters (via SparkMagic\Livy).</p>
+</li>
+<li>
+<p>An Amazon S3 bucket staging various artifacts related to Hail</p>
+</li>
+<li>
+<p>An S3 bucket used to back up Notebook environments launched.</p>
+</li>
+<li>
+<p>An optional VPC configured with public and private subnets, according to AWS best practices, to provide you with your own virtual network on AWS.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>In the public subnets:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed network address translation (NAT) gateways to allow outbound
-internet access for resources in the private subnets.*</p>
-</li>
-<li>
-<p>A Linux bastion host in an Auto Scaling group to allow inbound Secure
-Shell (SSH) access to EC2 instances in public and private subnets.*</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In the private subnets:
-* &lt;describe any additional components&gt;.</p>
-</div>
-<div class="paragraph">
-<p>*The template that deploys the Quick Start into an existing VPC skips
-the components marked by asterisks and prompts you for your existing VPC
-configuration.</p>
 </div>
 </div>
 </div>
@@ -1009,7 +993,7 @@ configuration.</p>
 <div class="paragraph">
 <p>This deployment guide requires a moderate level of familiarity with
 AWS services. If you’re new to AWS, visit the
-<a href="https://aws.amazon.com/getting-started/">Getting Started Resource Center</a>
+<a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener">Getting Started Resource Center</a>
 and the <a href="https://aws.amazon.com/training/">AWS Training and Certification
 website</a>. These sites provide materials for learning how to design,
 deploy, and operate your infrastructure and applications on the AWS
@@ -1020,16 +1004,14 @@ Cloud.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<div class="paragraph">
-<p>This Quick Start assumes familiarity with &lt;knowledge expectations&gt;.</p>
-</div>
+
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_aws_account">AWS account</h3>
 <div class="paragraph">
-<p>If you don’t already have an AWS account, create one at <a href="https://aws.amazon.com/">https://aws.amazon.com</a> by following the on-screen instructions. Part of the sign-up process involves receiving a phone call and entering a PIN using the phone keypad.</p>
+<p>If you don’t already have an AWS account, create one at <a href="https://aws.amazon.com/" target="_blank" rel="noopener">https://aws.amazon.com</a> by following the on-screen instructions. Part of the sign-up process involves receiving a phone call and entering a PIN using the phone keypad.</p>
 </div>
 <div class="paragraph">
 <p>Your AWS account is automatically signed up for all AWS services. You are charged only for the services you use.</p>
@@ -1043,8 +1025,10 @@ Cloud.</p>
 <div class="sect3">
 <h4 id="_resource_limits">Resource Limits</h4>
 <div class="paragraph">
-<p>If necessary, request <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/">service quota increases</a> for the following resources. You might need to do this if an existing deployment uses these resources, and you might exceed the default quotas with this deployment. The <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/">Service Quotas console</a> displays your usage and quotas for some aspects of some services. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">AWS documentation</a>.
-<em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/service_limits.adoc</code></strong></em></p>
+<p>If necessary, request <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">service quota increases</a> for the following resources. You might need to do this if an existing deployment uses these resources, and you might exceed the default quotas with this deployment. The <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">Service Quotas console</a> displays your usage and quotas for some aspects of some services. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">AWS documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/service_limits.adoc</code></strong></em></p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1062,38 +1046,30 @@ Cloud.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VPCs</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Elastic IP addresses</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AWS Identity and Access Management (IAM) security groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IAM roles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auto Scaling groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ml.t3.medium instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 (per Hail SageMaker notebook)**</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Application Load Balancers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Network Load Balancers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;type&gt; instances</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;n&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r5.xlarge, m5.xlarge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 each (per Hail Cluster)**</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>*The VPC is optional. If you don&#8217;t deploy the VPC, these resources won&#8217;t be used.
+**These are the defaults. You can change instance types for both the notebook and cluster nodes. You can also specify more nodes in your cluster if you choose.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1107,16 +1083,7 @@ Cloud.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><em>us-east-1 (N. Virginia)</em> (EXAMPLE)</p>
-</li>
-<li>
-<p><em>us-east-2 (Ohio)</em> (EXAMPLE)</p>
-</li>
-</ul>
-</div>
+
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1126,7 +1093,7 @@ Cloud.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Certain regions are available on an opt-in basis. Please refer to the AWS Documentaiton on <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Regions</a> for more information.
+Certain regions are available on an opt-in basis. Please refer to the AWS Documentaiton on <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html" target="_blank" rel="noopener">Managing Regions</a> for more information.
 </td>
 </tr>
 </table>
@@ -1142,7 +1109,7 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </div>
 </div>
 <div class="paragraph">
-<p>Make sure that at least one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pair</a> exists in your AWS account in the Region where you plan to deploy the Quick Start. Make note of the key pair name. You need it during deployment. To create a key pair, follow the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">instructions in the AWS documentation</a>.</p>
+<p>Make sure that at least one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">Amazon EC2 key pair</a> exists in your AWS account in the Region where you plan to deploy the Quick Start. Make note of the key pair name. You need it during deployment. To create a key pair, follow the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">instructions in the AWS documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>For testing or proof-of-concept purposes, we recommend creating a new key pair instead of using one that’s already being used by a production instance.</p>
@@ -1151,7 +1118,7 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 <div class="sect3">
 <h4 id="_iam_permissions">IAM Permissions</h4>
 <div class="paragraph">
-<p>Before launching the Quick Start, you must log in to the AWS Management Console with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html">IAM permissions</a> for the resources and actions the templates deploy.</p>
+<p>Before launching the Quick Start, you must log in to the AWS Management Console with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html" target="_blank" rel="noopener">IAM permissions</a> for the resources and actions the templates deploy.</p>
 </div>
 <div class="paragraph">
 <p>The <em>AdministratorAccess</em> managed policy within IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions.</p>
@@ -1161,14 +1128,7 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </div>
 <div class="exampleblock">
 <div class="content">
-<div class="paragraph">
-<p>==== Prepare your AWS account
-<em>Describe any setup required in the AWS account prior to template launch</em></p>
-</div>
-<div class="paragraph">
-<p>==== Prepare your Example Company Name, Ltd. account
-<em>Describe any setup required in the partner portal/account prior to template launch</em></p>
-</div>
+
 </div>
 </div>
 </div>
@@ -1185,15 +1145,15 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Deploy Example Product Name into a new VPC (end-to-end deployment)</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys Example Product Name into this new VPC.</p>
+<p><strong>Deploy Hail 0.2 into a new VPC (end-to-end deployment)</strong>. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then sets a number of AWS Parameter Store values with the appropriate resource IDs for things like VPC, subnets, and roles. Those parameters are then referenced automatically by the Hail 0.2 Service Catalog when you deploy Notebooks or Clusters.</p>
 </li>
 <li>
-<p><strong>Deploy Example Product Name into an existing VPC</strong>. This option provisions Example Product Name in your existing AWS infrastructure.</p>
+<p><strong>Deploy Hail 0.2 into an existing VPC</strong>. This option provisions in your existing AWS infrastructure. This option will set the necessary AWS Parameter Store values used by the Hail 0.2 Service Catalog products to the existing resources you want to use.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and Example Product Name settings, as discussed later in this guide.</p>
+<p>The Quick Start provides a single template for both options. It also lets you configure CIDR blocks, instance types, Hail, VEP, and EMR settings, as discussed later in this guide.</p>
 </div>
 </div>
 </div>
@@ -1204,85 +1164,13 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 <div class="sect1">
 <h2 id="_deployment_steps">Deployment Steps</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_sign_in_to_your_aws_account">Sign in to your AWS account</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#planning-the-deployment">Planning the deployment</a> earlier in this guide.</p>
-</li>
-<li>
-<p>Make sure that your AWS account is configured correctly, as discussed in the <a href="#technical-requirements">Technical requirements</a> section.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_launch_the_quick_start">Launch the Quick Start</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You are responsible for the cost of the AWS services used while running this Quick Start reference deployment. There is no additional cost for using this Quick Start. For full details, see the pricing pages for each AWS service used by this Quick Start. Prices are subject to change.
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Sign in to your AWS account, and choose one of the following options to launch the AWS CloudFormation template. For help with choosing an option, see <a href="#_Automated_Deployment">deployment options</a> earlier in this guide.</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/_qs_deploy_links.adoc</code></strong></em></p>
+<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/deploy_steps</em>.adoc</code></strong>_</p>
 </div>
 <div class="exampleblock">
 <div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Example Product Name into a new VPC on AWS</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Example Product Name into an existing VPC on AWS</a></p></td>
-</tr>
-</tbody>
-</table>
+
 </div>
-</div>
-<div class="paragraph">
-<p><strong>Important:</strong> If you’re deploying Example Product Name into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT gateways</a> in their route tables, to allow the instances to download packages and software without exposing them to the internet.</p>
-</div>
-<div class="paragraph">
-<p>Also, make sure that the domain name option in the DHCP options is configured as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">Amazon VPC documentation</a>. You provide your VPC settings when you launch the Quick Start.</p>
-</div>
-<div class="paragraph">
-<p>Each deployment takes about 30 minutes / 1 hour to complete.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="2">
-<li>
-<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Example Product Name will be built. The template is launched in the us-east-1 Region by default.</p>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<ol class="arabic" start="3">
-<li>
-<p>On the <strong>Create stack</strong> page, keep the default setting for the template URL, and then choose <strong>Next</strong>.</p>
-</li>
-<li>
-<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary.</p>
-</li>
-</ol>
 </div>
 <div class="paragraph">
 <p>In the following tables, parameters are listed by category and described separately for the deployment options. When you finish reviewing and customizing the parameters, choose <strong>Next</strong>.</p>
@@ -1295,11 +1183,10 @@ You are responsible for the cost of the AWS services used while running this Qui
 </td>
 <td class="content">
 We recommend keeping the default settings for the three parameters labled 'Quick Start S3 bucket name', 'Quick Start S3 bucket
-Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick Start templates for your own deployment projects. Changing these parameter settings automatically updates code references to point to a new Quick Start location. For additional details, see the <a href="https://aws-quickstart.github.io/option1.html">AWS Quick Start Contributor’s Guide</a>.
+Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick Start templates for your own deployment projects. Changing these parameter settings automatically updates code references to point to a new Quick Start location. For additional details, see the <a href="https://aws-quickstart.github.io/option1.html" target="_blank" rel="noopener">AWS Quick Start Contributor’s Guide</a>.
 </td>
 </tr>
 </table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_launch_into_a_new_vpc">Launch into a new VPC</h3>
@@ -1601,7 +1488,7 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <div class="olist arabic">
 <ol class="arabic" start="5">
 <li>
-<p>On the options page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html">set advanced options</a>. When you’re done, choose <strong>Next</strong>.</p>
+<p>On the options page, you can <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html" target="_blank" rel="noopener">specify tags</a> (key-value pairs) for resources in your stack and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html" target="_blank" rel="noopener">set advanced options</a>. When you’re done, choose <strong>Next</strong>.</p>
 </li>
 <li>
 <p>On the <strong>Review</strong> page, review and confirm the template settings. Under <strong>Capabilities</strong>, select the two check boxes to acknowledge that the template creates IAM resources and might require the ability to automatically expand macros.</p>
@@ -1610,7 +1497,7 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <p>Choose <strong>Create stack</strong> to deploy the stack.</p>
 </li>
 <li>
-<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Example Product Name cluster is ready.</p>
+<p>Monitor the status of the stack. When the status is <strong>CREATE_COMPLETE</strong>, the Hail 0.2 deployment is ready.</p>
 </li>
 <li>
 <p>Use the values displayed in the <strong>Outputs</strong> tab for the stack, as shown in Figure 2, to view the resources that were created.</p>
@@ -1621,14 +1508,7 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <div class="content">
 <img src="images/cfn_outputs.png" alt="cfn_outputs" width="648" height="439">
 </div>
-<div class="title">Figure 2. Example Product Name outputs after successful deployment</div>
-</div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/test_deployment.adoc</code></strong></em>
-=== Test the deployment</p>
-</div>
-<div class="paragraph">
-<p>&lt;Add instructions for testing the deployment.&gt;</p>
+<div class="title">Figure 2. Hail 0.2 outputs after successful deployment</div>
 </div>
 <div class="paragraph">
 <p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/additional_info.adoc</code></strong></em></p>
@@ -1639,10 +1519,18 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <p>== Post deployment steps</p>
 </div>
 <div class="paragraph">
-<p>== Best practices for using Example Product Name on AWS</p>
+<p>== Best practices for using Hail 0.2 on AWS</p>
 </div>
 <div class="paragraph">
-<p><em>Add any best practices for using the software.</em></p>
+<p>While it is convenient to work with Hail on EMR through the notebook, sometimes we just want to get on the hosts and poke around. In the event you need to get onto the hosts, make sure you set “Allow SSM Shell Access to EMR Nodes” to true when you launch the cluster via Service Catalog.</p>
+</div>
+<div class="paragraph">
+<p>You can then start SSH sessions onto those node by using the “Start Session” feature in AWS Systems Manager Session Manager console. You can also start a session from your local machine using the AWS CLI or from a notebook’s JupyterLab console as demonstrated below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ssh.png" alt="SSH" width="648" height="439">
+</div>
 </div>
 <div class="paragraph">
 <p>== Security</p>
@@ -1699,7 +1587,7 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <h2 id="_send_us_feedback">Send us feedback</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To post feedback, submit feature ideas, or report bugs, use the <strong>Issues</strong> section of the <a href="https://github.com/aws-quickstart/quickstart-documentation-base">GitHub repository</a> for this Quick Start. If you’d like to submit code, please review the <a href="https://aws-quickstart.github.io/">Quick Start Contributor’s Guide</a>.</p>
+<p>To post feedback, submit feature ideas, or report bugs, use the <strong>Issues</strong> section of the <a href="https://github.com/aws-quickstart/quickstart-hail" target="_blank" rel="noopener">GitHub repository</a> for this Quick Start. If you’d like to submit code, please review the <a href="https://aws-quickstart.github.io/" target="_blank" rel="noopener">Quick Start Contributor’s Guide</a>.</p>
 </div>
 </div>
 </div>
@@ -1720,13 +1608,13 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <h2 id="_github_repository">GitHub Repository</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can visit our <a href="https://github.com/aws-quickstart/quickstart-documentation-base">GitHub repository</a> to download
+<p>You can visit our <a href="https://github.com/aws-quickstart/quickstart-hail" target="_blank" rel="noopener">GitHub repository</a> to download
 the templates and scripts for this Quick Start, to post your comments,
 and to share your customizations with others.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p>© 2020, Amazon Web Services, Inc. or its affiliates, and Example Company Name, Ltd.. All rights reserved.</p>
+<p>© 2020, Amazon Web Services, Inc. or its affiliates, and PrivoIT. All rights reserved.</p>
 </div>
 <div class="sect3">
 <h4 id="_notices">Notices</h4>
@@ -1742,7 +1630,7 @@ and to share your customizations with others.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-01 23:31:37 UTC
+Last updated 2020-07-08 23:25:47 UTC
 </div>
 </div>
 </body>

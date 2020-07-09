@@ -790,13 +790,16 @@ table p {
 <li><a href="#_launch_into_an_existing_vpc">Launch into an existing VPC</a></li>
 </ul>
 </li>
-<li><a href="#_test_the_deployment">Test the deployment</a></li>
-<li><a href="#_post_deployment_steps">Post deployment steps</a></li>
+<li><a href="#_post_deployment_steps">Post deployment steps</a>
+<ul class="sectlevel2">
+<li><a href="#_grant_permissions_to_the_hail_0_2_service_catalog_portfolio">Grant permissions to the Hail 0.2 Service Catalog Portfolio</a></li>
+<li><a href="#_launch_a_hail_cluster">Launch a Hail Cluster</a></li>
+<li><a href="#_launch_a_hail_notebook">Launch a Hail Notebook</a></li>
+<li><a href="#_open_the_notebook_connect_to_the_cluster_and_conquer">Open the notebook, connect to the cluster, and conquer</a></li>
+</ul>
+</li>
 <li><a href="#_best_practices_for_using_hail_0_2_on_aws">Best practices for using Hail 0.2 on AWS</a></li>
-<li><a href="#_security">Security</a></li>
-<li><a href="#_other_useful_information">Other useful information</a></li>
 <li><a href="#_faq">FAQ</a></li>
-<li><a href="#_troubleshooting">Troubleshooting</a></li>
 <li><a href="#_send_us_feedback">Send us feedback</a></li>
 <li><a href="#_quick_start_reference_deployments">Quick Start reference deployments</a></li>
 <li><a href="#_github_repository">GitHub Repository</a>
@@ -1549,15 +1552,384 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 </div>
 </div>
 <div class="sect1">
-<h2 id="_test_the_deployment">Test the deployment</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
 <h2 id="_post_deployment_steps">Post deployment steps</h2>
 <div class="sectionbody">
-
+<div class="sect2">
+<h3 id="_grant_permissions_to_the_hail_0_2_service_catalog_portfolio">Grant permissions to the Hail 0.2 Service Catalog Portfolio</h3>
+<div class="paragraph">
+<p>Open the AWS Service Catalog console and select the “Hail Products” portfolio</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/Picture1.png" alt="Picture1" width="648" height="439">
+</div>
+</div>
+<div class="paragraph">
+<p>Click on the “Groups, roles, and users (1)” tab and then click the “Add groups, roles, users” button”.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/Picture2.png" alt="Picture2" width="648" height="439">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the IAM users/roles/groups that you want to grant the ability to launch Hail clusters or notebooks. For example, I’m giving access to an IAM user below. Even though you launched the catalog, you still need to explicitly grant yourself permissions this way. So don’t forget to grant yourself access.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/Picture3.png" alt="Picture3" width="648" height="439">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_launch_a_hail_cluster">Launch a Hail Cluster</h3>
+<div class="paragraph">
+<p>Return to Service Catalog and click on the topmost “Products” link on the left gutter. Users who are not service catalogs administrators and visit the service catalog in the console will be taken directly to this location.</p>
+</div>
+<div class="paragraph">
+<p>Click on the stacked Dots on the “Hail EMR Cluster” product and choose the “Launch Product” button.
+image::../images/testing/Picture4.png[Picture4,width=648,height=439]</p>
+</div>
+<div class="paragraph">
+<p>Provide a name for this Hail cluster, click next, and then you will be presented with the following Hail cluster options.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cluster Primary Settings</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cluster Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the EMR cluster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hail AMI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Custom AMI, specific version from the public AMI list, or empty value.  If empty, the latest public Hail with VEP AMI will be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EMR Release</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emr-5.29.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS EMR release version to use for cluster nodes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Root Volume Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Root volume size in GB for all cluster instances.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EBS KMS Key ARN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The full KMS Key ARN if region level EBS encryption is enabled. Note, this does NOT automatically encrypt your AMI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance Termination Protection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select “true” to enable instance termination protection on Master and Core nodes of the cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow SSM Shell Access from SageMaker Notebook Instances</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select “true” to allow SSM Shell access to cluster nodes from SageMaker Notebook instances. To fully enable, this same setting must also be set to “true” when creating SageMaker Notebook Instances.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Master Instance Settings</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Master Node Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">m5.xlarge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance type to use for EMR master node</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Core Instance Settings</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of Core Nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of core nodes to launch with the cluster. Must be &gt;= 1.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core Instance Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r5.xlarge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instanct type to use for EMR core nodes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scratch Volume Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secondary GP2 data volume size in GB for CORE nodes. Available on /mnt</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Auto Scaling Task Node Settings</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ON_DEMAND</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select “SPOT” to use Spot instances for Task nodes. Spot instances are used with a max bid of the on demand price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of Task Nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value of 0 disables task nodes and auto scaling.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of Task Nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be equal to or greater than minimum.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Task Node Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r5.large</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance type to use for EMR task nodes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tagging</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">development</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment type for default resource tagging.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Owner Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) - Owner of the resources. Person/Department, etc.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Proceed through the Service Catalog wizard accepting default values for the “Tag Options”, “Notifications”, and “Review” phases of the wizard and then click the “Launch Button”.</p>
+</div>
+<div class="paragraph">
+<p>It will look like this while your cluster is being provisioned:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/cluster.png" alt="Cluster" width="648" height="439">
+</div>
+</div>
+<div class="paragraph">
+<p>The status will change to succeeded when it is complete.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/cluster_complete.png" alt="Cluster complete" width="648" height="439">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_launch_a_hail_notebook">Launch a Hail Notebook</h3>
+<div class="paragraph">
+<p>Go back to Service Catalog’s Product list page, select the ‘Hail SageMaker Notebook Instance’ and choose ‘Launch product’. Provide a name for your Service Catalog product launch in the “Product version” phase of the launch wizard. Supply the following parameters when you get to the “Parameters” phase.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Instance Details</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used as the name of the notebook instance and S3 backup location. Username is recommend - E.g. jsmith</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ml.t3.medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instance type to use for the Notebook Instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size in GB of the EBS volume used by the Notebook Instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow SSM Shell Access to EMR Nodes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select “true” to allow SSM Shell access to cluster nodes from SageMaker Notebook instances. To fully enable, this same setting must also be set to “true” when creating an EMR cluster.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tagging</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter label</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">development</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment type for default resource tagging.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Owner Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) - Owner of the resources. Person/Department, etc.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Proceed through the “Tag Options”, “Notificatons”, and “Review” phases of the wizard accepting all of the defaults and click “Launch”.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/review.png" alt="Review" width="648" height="439">
+</div>
+</div>
+<div class="paragraph">
+<p>It should look like the following once the notebook is completed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/Launch.png" alt="Launch" width="648" height="439">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_open_the_notebook_connect_to_the_cluster_and_conquer">Open the notebook, connect to the cluster, and conquer</h3>
+<div class="paragraph">
+<p>Go to Amazon SageMaker in the web console, and select “Notebook instances” in the left gutter. You will see a notebook instance with the ‘name’ tag you specified when you launched the notebook from Service Catalog. Select that notebook instance and click the “Open JupyterLab” hyperlink.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/open_notebook.png" alt="Open notebook" width="648" height="439">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the notebook launches, navigate to the “common-notebooks” folder to see some example notebooks that show how to connect to the EMR cluster and begin your Hail session.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testing/notebook.png" alt="Notebook" width="648" height="439">
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1573,22 +1945,6 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <div class="content">
 <img src="images/ssh.png" alt="SSH" width="648" height="439">
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_security">Security</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>Add any security-related information.</em></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_other_useful_information">Other useful information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>Add any other details that will help the customer use the software on AWS.</em></p>
 </div>
 </div>
 </div>
@@ -1621,14 +1977,6 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 </div>
 <div class="paragraph">
 <p><strong>A.</strong> We recommend that you launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS documentation</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_troubleshooting">Troubleshooting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&lt;Steps for troubleshooting the deployment go here.&gt;</p>
 </div>
 </div>
 </div>
@@ -1679,7 +2027,7 @@ and to share your customizations with others.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-09 20:34:14 UTC
+Last updated 2020-07-09 21:34:32 UTC
 </div>
 </div>
 </body>

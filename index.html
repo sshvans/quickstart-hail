@@ -876,7 +876,7 @@ collaborated with AWS on the content of the Quick Start.
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Hail is maintained by a team in the <a href="https://www.nealelab.is">Neale</a> lab at the <a href="https://www.broadinstitute.org/stanley">Stanley Center for Psychiatric Research</a> of the <a href="https://www.broadinstitute.org/">Broad Institute of MIT and Harvard</a> and the <a href="https://www.atgu.mgh.harvard.edu/">Analytic and Translational Genetics Unit</a>https://www.massgeneral.org[of Massachusetts General Hospital].
+<p>Hail is maintained by a team in the <a href="https://www.nealelab.is">Neale</a> lab at the <a href="https://www.broadinstitute.org/stanley">Stanley Center for Psychiatric Research</a> of the <a href="https://www.broadinstitute.org/">Broad Institute of MIT and Harvard</a> and the <a href="https://www.atgu.mgh.harvard.edu/">Analytic and Translational Genetics Unit</a> of <a href="https://www.massgeneral.org">Massachusetts General Hospital</a>.
 This QuickStart packages up Hail into your AWS environment and makes it easy to spin up clusters and integrated notebooks for analysis.</p>
 </div>
 </div>
@@ -1067,8 +1067,10 @@ Cloud.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>*The VPC is optional. If you don&#8217;t deploy the VPC, these resources won&#8217;t be used.
-**These are the defaults. You can change instance types for both the notebook and cluster nodes. You can also specify more nodes in your cluster if you choose.</p>
+<p>*The VPC is optional. If you don&#8217;t deploy the VPC, these resources won&#8217;t be used.</p>
+</div>
+<div class="paragraph">
+<p>**These are the defaults. You can change instance types for both the notebook and cluster nodes. You can also specify more nodes in your cluster if you choose.</p>
 </div>
 </div>
 </div>
@@ -1169,7 +1171,89 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </div>
 <div class="exampleblock">
 <div class="content">
-
+<div class="paragraph">
+<p>=== Sign in to your AWS account</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sign in to your AWS account at <a href="https://aws.amazon.com" class="bare">https://aws.amazon.com</a> with an IAM user role that has the necessary permissions. For details, see <a href="#planning-the-deployment">Planning the deployment</a> earlier in this guide.</p>
+</li>
+<li>
+<p>Make sure that your AWS account is configured correctly, as discussed in the <a href="#technical-requirements">Technical requirements</a> section.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>=== Launch the Quick Start</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You are responsible for the cost of the AWS services used while running this Quick Start reference deployment. There is no additional cost for using this Quick Start. For full details, see the pricing pages for each AWS service used by this Quick Start. Prices are subject to change.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sign in to your AWS account, and choose one of the following options to launch the AWS CloudFormation template. For help with choosing an option, see <a href="#_Automated_Deployment">deployment options</a> earlier in this guide.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Hail 0.2 into a new VPC on AWS</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://qs_launch_link" target="_blank" rel="noopener">Deploy Hail 0.2 into an existing VPC on AWS</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you’re deploying Hail 0.2 into an existing VPC, make sure that your VPC has two private subnets in different Availability Zones for the workload instances, and that the subnets aren’t shared. This Quick Start doesn’t support <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared subnets</a>. These subnets require <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT gateways</a> in their route tables, to allow the instances to download packages and software without exposing them to the internet.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Also, make sure that the domain name option in the DHCP options is configured as explained in the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">Amazon VPC documentation</a>. You provide your VPC settings when you launch the Quick Start.</p>
+</div>
+<div class="paragraph">
+<p>Each deployment takes about 10 minutes to complete.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Check the AWS Region that’s displayed in the upper-right corner of the navigation bar, and change it if necessary. This is where the network infrastructure for Hail 0.2 will be built. The template is launched in the us-east-1 Region by default.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>On the <strong>Create stack</strong> page, keep the default setting for the template URL, and then choose <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Specify stack details</strong> page, change the stack name if needed. Review the parameters for the template. Provide values for the parameters that require input. For all other parameters, review the default settings and customize them as necessary.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="paragraph">
@@ -1516,6 +1600,9 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
+<p>== Test the deployment</p>
+</div>
+<div class="paragraph">
 <p>== Post deployment steps</p>
 </div>
 <div class="paragraph">
@@ -1560,8 +1647,17 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <div class="paragraph">
 <p><strong>A.</strong> If AWS CloudFormation fails to create the stack, we recommend that you relaunch the template with <strong>Rollback on failure</strong> set to <strong>No</strong>. (This setting is under <strong>Advanced</strong> in the AWS CloudFormation console, <strong>Options</strong> page.) With this setting, the stack’s state is retained and the instance is left running, so you can troubleshoot the issue. (For Windows, look at the log files in %ProgramFiles%\Amazon\EC2ConfigService and C:\cfn\log.)</p>
 </div>
-<div class="paragraph">
-<p><strong>Important:</strong> When you set <strong>Rollback on failure</strong> to <strong>No</strong>, you continue to incur AWS charges for this stack. Please make sure to delete the stack when you finish troubleshooting.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, you continue to incur AWS charges for this stack. Please make sure to delete the stack when you finish troubleshooting.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>For additional information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html">Troubleshooting AWS CloudFormation</a> on the AWS website.</p>
@@ -1630,7 +1726,7 @@ and to share your customizations with others.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-08 23:25:47 UTC
+Last updated 2020-07-09 20:21:42 UTC
 </div>
 </div>
 </body>

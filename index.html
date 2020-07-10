@@ -784,10 +784,22 @@ table p {
 </li>
 <li><a href="#_deployment_steps">Deployment Steps</a>
 <ul class="sectlevel2">
+<li><a href="#_sign_in_to_your_aws_account">Sign in to your AWS account</a></li>
+<li><a href="#_launch_the_quick_start">Launch the Quick Start</a></li>
 <li><a href="#_launch_into_a_new_vpc">Launch into a new VPC</a></li>
 <li><a href="#_launch_into_an_existing_vpc">Launch into an existing VPC</a></li>
 </ul>
 </li>
+<li><a href="#_post_deployment_steps">Post deployment steps</a>
+<ul class="sectlevel2">
+<li><a href="#_grant_permissions_to_the_hail_0_2_service_catalog_portfolio">Grant permissions to the Hail 0.2 Service Catalog Portfolio</a></li>
+<li><a href="#_launch_a_hail_cluster">Launch a Hail Cluster</a></li>
+<li><a href="#_launch_a_hail_notebook">Launch a Hail Notebook</a></li>
+<li><a href="#_open_the_notebook_connect_to_the_cluster_and_conquer">Open the notebook, connect to the cluster, and conquer</a></li>
+</ul>
+</li>
+<li><a href="#_best_practices_for_using_hail_0_2_on_aws">Best practices for using Hail 0.2 on AWS</a></li>
+<li><a href="#_faq">FAQ</a></li>
 <li><a href="#_send_us_feedback">Send us feedback</a></li>
 <li><a href="#_quick_start_reference_deployments">Quick Start reference deployments</a></li>
 <li><a href="#_github_repository">GitHub Repository</a>
@@ -803,20 +815,12 @@ table p {
 <div class="sectionbody">
 <h2 id="_hail_0_2_on_the_aws_cloud" class="discrete text-center"><em>Hail 0.2</em> on the AWS Cloud</h2>
 <h2 id="_quick_start_reference_deployment" class="discrete text-left text-center">Quick Start Reference Deployment</h2>
-<h3 id="_draft_document_unofficial_guidance" class="discrete text-center">DRAFT DOCUMENT / UNOFFICIAL GUIDANCE</h3>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph text-center">
 <p><strong>July, 2020</strong><br>
 <em>Adam Perry, Privo IT + Adam Tebbe, Goldfinch Pharmaceuticals</em><br>
 <em>Paul Underwood, AWS + Roy Hasson, AWS</em></p>
 </div>
-</div>
-</div>
-<div class="paragraph">
-<p><em><strong>The above information is configured within <code>partner_editable/_settings.adoc</code></strong></em></p>
-</div>
-<div class="admonitionblock tip">
+<div class="admonitionblock tip text-left">
 <table>
 <tr>
 <td class="icon">
@@ -842,14 +846,7 @@ report bugs, or submit feature ideas for this Quick Start.
 instructions for deploying <em>Hail 0.2</em> on the AWS Cloud.</p>
 </div>
 <div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/overview_target_and_usage</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
 <p>This Quick Start is for users who are looking to use an open-source library for scalable data exploration and analysis, with particular emphasis on genomics.</p>
-</div>
-</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -871,15 +868,8 @@ collaborated with AWS on the content of the Quick Start.
 <h2 id="_hail_0_2_on_aws"><em>Hail 0.2</em> on AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/product_description.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
 <p>Hail is maintained by a team in the <a href="https://www.nealelab.is">Neale</a> lab at the <a href="https://www.broadinstitute.org/stanley">Stanley Center for Psychiatric Research</a> of the <a href="https://www.broadinstitute.org/">Broad Institute of MIT and Harvard</a> and the <a href="https://www.atgu.mgh.harvard.edu/">Analytic and Translational Genetics Unit</a> of <a href="https://www.massgeneral.org">Massachusetts General Hospital</a>.
 This QuickStart packages up Hail into your AWS environment and makes it easy to spin up clusters and integrated notebooks for analysis.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -915,25 +905,13 @@ After you deploy the Quick Start, we recommend that you enable the <a href="http
 <h2 id="_software_licenses">Software Licenses</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/licenses.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
 <p>Hail 0.2 is released under the <a href="https://github.com/hail-is/hail/blob/master/LICENSE">MIT License</a>.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_architecture">Architecture</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/architecture.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
 <p>Deploying this Quick Start for a new virtual private cloud (VPC) with
 <strong>default parameters</strong> builds the following <em>Hail 0.2</em> environment in the
@@ -983,8 +961,6 @@ AWS Cloud.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_planning_the_deployment">Planning the deployment</h2>
 <div class="sectionbody">
@@ -998,14 +974,6 @@ and the <a href="https://aws.amazon.com/training/">AWS Training and Certificatio
 website</a>. These sites provide materials for learning how to design,
 deploy, and operate your infrastructure and applications on the AWS
 Cloud.</p>
-</div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/specialized_knowledge.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -1027,11 +995,6 @@ Cloud.</p>
 <div class="paragraph">
 <p>If necessary, request <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">service quota increases</a> for the following resources. You might need to do this if an existing deployment uses these resources, and you might exceed the default quotas with this deployment. The <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-2#!/" target="_blank" rel="noopener">Service Quotas console</a> displays your usage and quotas for some aspects of some services. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html" target="_blank" rel="noopener">AWS documentation</a>.</p>
 </div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/service_limits.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -1070,9 +1033,37 @@ Cloud.</p>
 <p>*The VPC is optional. If you don&#8217;t deploy the VPC, these resources won&#8217;t be used.</p>
 </div>
 <div class="paragraph">
-<p>**These are the defaults. You can change instance types for both the notebook and cluster nodes. You can also specify more nodes in your cluster if you choose.</p>
-</div>
-</div>
+<p>**These are the defaults. You can change instance types for both the notebook and cluster nodes. You can also specify more nodes in your cluster if you choose.
+:template_aws_cloudformation_stack:
+:template_aws_codebuild_project:
+:template_aws_ec2_securitygroup:
+:template_aws_ec2_securitygroupingress:
+:template_aws_emr_cluster:
+:template_aws_emr_instancegroupconfig:
+:template_aws_iam_instanceprofile:
+:template_aws_iam_policy:
+:template_aws_iam_role:
+:template_aws_lambda_function:
+:template_aws_lambda_permission:
+:template_aws_s3_bucket:
+:template_aws_sagemaker_notebookinstance:
+:template_aws_sagemaker_notebookinstancelifecycleconfig:
+:template_aws_servicecatalog_cloudformationproduct:
+:template_aws_servicecatalog_portfolio:
+:template_aws_servicecatalog_portfolioproductassociation:
+:template_aws_ssm_parameter:
+:template_cloudformation:
+:template_codebuild:
+:template_custom_invokelambdafunction:
+:template_ec2:
+:template_emr:
+:template_iam:
+:template_invokelambdafunction:
+:template_lambda:
+:template_s3:
+:template_sagemaker:
+:template_servicecatalog:
+:template_ssm:</p>
 </div>
 </div>
 <div class="sect3">
@@ -1080,11 +1071,6 @@ Cloud.</p>
 <div class="paragraph">
 <p>The following regions are currently supported by this Quick Start Reference Architecture.</p>
 </div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/regions.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1149,8 +1135,6 @@ Cloud.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1166,13 +1150,6 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </div>
 <div class="sect3">
 <h4 id="_ec2_key_pairs">EC2 Key Pairs</h4>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><em>This section is conditional on EC2 instances being used in the Cloudformation Templates</em></p>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>Make sure that at least one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">Amazon EC2 key pair</a> exists in your AWS account in the Region where you plan to deploy the Quick Start. Make note of the key pair name. You need it during deployment. To create a key pair, follow the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener">instructions in the AWS documentation</a>.</p>
 </div>
@@ -1188,22 +1165,9 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 <div class="paragraph">
 <p>The <em>AdministratorAccess</em> managed policy within IAM provides sufficient permissions, although your organization may choose to use a custom policy with more restrictions.</p>
 </div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/pre-reqs.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_deployment_options">Deployment options</h4>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/deployment_options.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
 <p>This Quick Start provides two deployment options:</p>
 </div>
@@ -1224,19 +1188,11 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </div>
 </div>
 </div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="_deployment_steps">Deployment Steps</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/deploy_steps</em>.adoc</code></strong>_</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>=== Sign in to your AWS account</p>
-</div>
+<div class="sect2">
+<h3 id="_sign_in_to_your_aws_account">Sign in to your AWS account</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1247,9 +1203,9 @@ Certain regions are available on an opt-in basis. Please refer to the AWS Docume
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>=== Launch the Quick Start</p>
 </div>
+<div class="sect2">
+<h3 id="_launch_the_quick_start">Launch the Quick Start</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1317,8 +1273,6 @@ If you’re deploying Hail 0.2 into an existing VPC, make sure that your VPC has
 </li>
 </ol>
 </div>
-</div>
-</div>
 <div class="paragraph">
 <p>In the following tables, parameters are listed by category and described separately for the deployment options. When you finish reviewing and customizing the parameters, choose <strong>Next</strong>.</p>
 </div>
@@ -1334,6 +1288,7 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 </td>
 </tr>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_launch_into_a_new_vpc">Launch into a new VPC</h3>
@@ -1657,15 +1612,14 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 </div>
 <div class="title">Figure 2. Hail 0.2 outputs after successful deployment</div>
 </div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/additional_info.adoc</code></strong></em></p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>== Post deployment steps
-=== Grant permissions to the Hail 0.2 Service Catalog Portfolio</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_post_deployment_steps">Post deployment steps</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_grant_permissions_to_the_hail_0_2_service_catalog_portfolio">Grant permissions to the Hail 0.2 Service Catalog Portfolio</h3>
 <div class="paragraph">
 <p>Open the AWS Service Catalog console and select the “Hail Products” portfolio</p>
 </div>
@@ -1690,9 +1644,9 @@ Region', and 'Quick Start S3 key prefix', unless you are customizing the Quick S
 <img src="images/testing/Picture3.png" alt="Picture3" width="648" height="439">
 </div>
 </div>
-<div class="paragraph">
-<p>=== Launch a Hail Cluster</p>
 </div>
+<div class="sect2">
+<h3 id="_launch_a_hail_cluster">Launch a Hail Cluster</h3>
 <div class="paragraph">
 <p>Return to Service Catalog and click on the topmost “Products” link on the left gutter. Users who are not service catalogs administrators and visit the service catalog in the console will be taken directly to this location.</p>
 </div>
@@ -1892,9 +1846,9 @@ image::../images/testing/Picture4.png[Picture4,width=648,height=439]</p>
 <img src="images/testing/cluster_complete.png" alt="Cluster complete" width="648" height="439">
 </div>
 </div>
-<div class="paragraph">
-<p>=== Launch a Hail Notebook</p>
 </div>
+<div class="sect2">
+<h3 id="_launch_a_hail_notebook">Launch a Hail Notebook</h3>
 <div class="paragraph">
 <p>Go back to Service Catalog’s Product list page, select the ‘Hail SageMaker Notebook Instance’ and choose ‘Launch product’. Provide a name for your Service Catalog product launch in the “Product version” phase of the launch wizard. Supply the following parameters when you get to the “Parameters” phase.</p>
 </div>
@@ -1978,9 +1932,9 @@ image::../images/testing/Picture4.png[Picture4,width=648,height=439]</p>
 <img src="images/testing/Launch.png" alt="Launch" width="648" height="439">
 </div>
 </div>
-<div class="paragraph">
-<p>=== Open the notebook, connect to the cluster, and conquer</p>
 </div>
+<div class="sect2">
+<h3 id="_open_the_notebook_connect_to_the_cluster_and_conquer">Open the notebook, connect to the cluster, and conquer</h3>
 <div class="paragraph">
 <p>Go to Amazon SageMaker in the web console, and select “Notebook instances” in the left gutter. You will see a notebook instance with the ‘name’ tag you specified when you launched the notebook from Service Catalog. Select that notebook instance and click the “Open JupyterLab” hyperlink.</p>
 </div>
@@ -1997,9 +1951,12 @@ image::../images/testing/Picture4.png[Picture4,width=648,height=439]</p>
 <img src="images/testing/notebook.png" alt="Notebook" width="648" height="439">
 </div>
 </div>
-<div class="paragraph">
-<p>== Best practices for using Hail 0.2 on AWS</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices_for_using_hail_0_2_on_aws">Best practices for using Hail 0.2 on AWS</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>While it is convenient to work with Hail on EMR through the notebook, sometimes we just want to get on the hosts and poke around. In the event you need to get onto the hosts, make sure you set “Allow SSM Shell Access to EMR Nodes” to true when you launch the cluster via Service Catalog.</p>
 </div>
@@ -2013,14 +1970,9 @@ image::../images/testing/Picture4.png[Picture4,width=648,height=439]</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p><em><strong>This portion of the deployment guide is located at <code>docs/partner_editable/faq_troubleshooting.adoc</code></strong></em></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>== FAQ</p>
-</div>
+<div class="sect1">
+<h2 id="_faq">FAQ</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q.</strong> I encountered a <strong>CREATE_FAILED</strong> error when I launched the Quick Start.</p>
 </div>
@@ -2047,9 +1999,6 @@ When you set <strong>Rollback on failure</strong> to <strong>Disabled</strong>, 
 </div>
 <div class="paragraph">
 <p><strong>A.</strong> We recommend that you launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template size limitations. For more information about AWS CloudFormation quotas, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS documentation</a>.</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2100,7 +2049,7 @@ and to share your customizations with others.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-10 00:13:15 UTC
+Last updated 2020-07-10 16:45:12 UTC
 </div>
 </div>
 </body>
